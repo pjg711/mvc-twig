@@ -1,0 +1,131 @@
+<?php
+global $twig;
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+define('DEBUG',false);
+// idioma por defecto
+define('IDIOMA_POR_DEFECTO','ES');
+// Define custom session name
+define('SESSION_NAME',"mvcweb_");
+// Any Session or Cookie will use this named constant as prefix
+define('LOCAL_IDENTIFIER',"MVCWeb");
+// SCRIPT VERSION
+define('VERSION',"1.0.0");
+// Save the session ID on a constant
+define('CURRENT_SESSION_ID',session_id());
+// Defines the Default charset for all php/html documents and e-mail; also used to determinate the db connection charset
+define('DEFAULT_CHARSET',"utf8"); // iso-8859-1 utf-8
+define('DEFAULT_COLLATION',"utf8_general_ci");
+// protocolo
+define('PROTOCOLO','http://');
+// www root
+if( isset( $_SERVER['HTTP_HOST'] ) )
+{
+    define('WWW_ROOT', $_SERVER['HTTP_HOST']);
+}else
+{
+    define('WWW_ROOT', '');
+}
+//define('WWW_ROOT',$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+// define archivos root
+define('PATH_ROOT',dirname(__FILE__));
+// VISTAS
+define('FOLDER_VIEW','Vistas');
+// PLANTILLA
+define('FOLDER_TEMPLATE','templates');
+// Estilo definido
+define('FOLDER_STYLE','original');
+// MIMETYPE
+define('MIMETYPE',"24x24");
+// carpeta archivos temporales
+define('TEMPORALES',PATH_ROOT."/temp/");
+#
+#############################################
+###           INFO AUTOR
+#
+define('AUTOR_NOMBRE','Pablo García');
+define('AUTOR_EMAIL','garcia@cifasis-conicet.gov.ar');
+define('AUTOR_HOMEPAGE','http://www.pablogarciaweb.com.ar');
+#
+#############################################
+###           DB SETTINGS
+#
+define('DBT_PREFIX', 'mvcweb_'); // prefix for custom database table names (MUST BE LOWERCASE)
+define('DB_SERVER','localhost');
+define('DB_SERVER_USERNAME', 'xxxx');
+define('DB_SERVER_PASSWORD', 'xxxx');
+define('DB_DATABASE', 'xxxx');
+#
+##############################################
+###           ORDENAR
+#
+define('ORDENAR_POR_ORDER',0);
+define('ORDENAR_POR_ID',1);
+define('ORDENAR_POR_ANIO',2);
+define('ORDENAR_POR_FECHAALTA_ASC',3);
+define('ORDENAR_POR_FECHAALTA_DESC',6);
+define('ORDENAR_POR_ORDEN_ASC',4);
+define('ORDENAR_POR_ORDEN_DESC',5);
+define('ORDENAR_POR_APELLIDO_ASC',6);
+define('ORDENAR_POR_APELLIDO_DESC',7);
+#
+#
+#############################################
+###           RUTAS
+#
+# Excluir archivos
+define('EXCLUIR',serialize(array('main.php')));
+#
+#############################################
+###           INTRANET
+#
+define('INTRANET', true);
+#############################################
+###         DATABASE CONNECTION
+#
+  	// See above constants settings
+  	// DB_SERVER
+  	// DB_SERVER_USERNAME
+  	// DB_SERVER_PASSWORD
+  	// DB_DATABASE
+	// USE_PCONNECT
+	// OPEN DATABASE CONNECTION
+// PDO values
+if( !($db_link = new PDO('mysql:host='.DB_SERVER.';dbname='.DB_DATABASE.';charset=utf8', DB_SERVER_USERNAME, DB_SERVER_PASSWORD)) )
+{
+  	echo "Could not connect to ".DB_DATABASE."<br>";
+  	return true;
+}
+/**
+ * [sql_select description]
+ * @param  [type]  $query     [description]
+ * @param  [type]  $rv        [description]
+ * @param  boolean $reemplazo [description]
+ * @param  integer $cantidad  [description]
+ * @return [type]             [description]
+ */
+function sql_select( $query, &$rv, $reemplazo = true, $cantidad = 0 )
+{
+  	global $db_link;
+    if( $reemplazo )
+    {
+        $query = preg_replace("/\r\n|\r/", chr(32), $query);
+    }
+  	if( DEFAULT_CHARSET == "utf8" OR DEFAULT_CHARSET == "utf-8" )
+  	{
+        $db_link->query("SET NAMES 'utf8'");
+  	}
+  	$rv = $db_link->prepare( $query );
+  	if( !$rv->execute() )
+  	{
+        //print_r($rv->errorInfo());
+        //echo "cantidad sql_select--->{$rv->rowCount()}<br>";
+        //$cantidad =
+		return false;
+  	}
+  	if( $last_id = $db_link->lastInsertId() )
+  	{
+        return $last_id;
+  	}
+  	return true;
+}
+?>

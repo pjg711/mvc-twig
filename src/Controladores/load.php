@@ -1,9 +1,10 @@
 <?php
 namespace MVCWeb\Modelos;
-
+/*
 spl_autoload_register( function ($pClassName) {
     include_once PATH_ROOT . "/Modelos/" . $pClassName . ".php";
 });
+*/
 use MVCWeb\Modelos\Pagina;
 // ***************************************************************************
 // atributos de la pagina web definidos en config.php de la plantilla

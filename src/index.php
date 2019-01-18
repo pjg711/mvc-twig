@@ -15,4 +15,4 @@ if(!file_exists('config.inc.php'))
 require_once 'config.inc.php';
 session_start();
 require_once '../vendor/autoload.php';
-include 'Rutas/main.php';
+include_once 'Rutas/main.php';

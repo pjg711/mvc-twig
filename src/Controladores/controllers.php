@@ -1,7 +1,5 @@
 <?php
 namespace MVCWeb\Controladores;
-use MVCWeb\Modelos\Login;
-use MVCWeb\Modelos\Modulos;
 
 class Controladores
 {

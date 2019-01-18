@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block title %}Hola Mundo prueba!{% endblock %}
+{% block head %}
+<head>
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ config.PROTOCOLO }}{{ config.WWW_ROOT }}/{{ config.FOLDER_VIEW }}/{{ config.FOLDER_STYLE }}/{{ pagina.folder_css }}/index.css">
+</head>
+{% endblock %}
+
+{% block body %}
+<body>
+    <div>
+        <p>Hola Mundo prueba!</p>
+    </div>
+    {% block js %}{{ parent() }}{% endblock %}
+</body>
+{% endblock %} {# /body #}

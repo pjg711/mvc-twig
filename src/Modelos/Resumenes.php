@@ -5,7 +5,6 @@ use MVCWeb\Modelos\Resumen;
 /**
  * [Resumenes description]
  */
-#
 class Resumenes
 {
     private $idioma = "";

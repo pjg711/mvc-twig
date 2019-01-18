@@ -1,14 +1,15 @@
 <?php
 namespace MVCWeb\Controladores;
 
-class CIndex extends Controladores
+class C_Index extends Controladores
 {
     /**
      * [inicio description]
      * @return [type] [description]
      */
-    function inicio()
+    function index()
     {
+        //echo "pase por index<br>";
         $this->plantilla = "index.html.twig";
         $this->render();
     }

@@ -1,0 +1,11 @@
+{
+    "name": "pjg711/TemplateOriginalMVCWeb",
+    "description": "Template Original MVCWeb",
+    "authors": [
+        {
+            "name": "pjg711",
+            "email": "pablo.ju.garcia@gmail.com"
+        }
+    ],
+    "require": {}
+}

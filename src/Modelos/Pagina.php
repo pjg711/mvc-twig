@@ -1,5 +1,5 @@
 <?php
-namespace Modelos;
+namespace MVCWeb\Modelos;
 /**
  * [Pagina description]
  */

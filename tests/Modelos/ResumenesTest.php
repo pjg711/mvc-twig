@@ -68,7 +68,10 @@ class ResumenesTest extends TestCase
         */
         $this->assertTrue(isset($resumen) && count($resumen)>1);
     }
-
+    /**
+     * [test_Lectura_Resumenes_IdGrupo description]
+     * @return [type] [description]
+     */
     public function test_Lectura_Resumenes_IdGrupo()
     {
         $idioma = "es";
@@ -93,5 +96,6 @@ class ResumenesTest extends TestCase
         */
         $this->assertTrue(isset($resumen) && count($resumen)>1);
     }
+
 }
 ?>

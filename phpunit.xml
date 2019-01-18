@@ -12,6 +12,9 @@
         <testsuite name="Test de modelos">
             <directory>./tests/Modelos</directory>
         </testsuite>
+        <testsuite name="Test de Base de Datos">
+            <directory>./tests/BD</directory>
+        </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">

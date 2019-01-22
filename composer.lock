@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc2b95187cc9f79b1d5c330aad0a8df4",
-    "content-hash": "dc9d768d72fc24b45b93b6238daca9a3",
+    "hash": "e2a9c1d9078f0c30967557c4ab33b812",
+    "content-hash": "d26bdddfb4e09cb047cae40ad571dc03",
     "packages": [
         {
             "name": "bramus/router",
@@ -517,6 +517,51 @@
             "time": "2018-09-21 13:07:52"
         },
         {
+            "name": "thingengineer/mysqli-database-class",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ThingEngineer/PHP-MySQLi-Database-Class.git",
+                "reference": "43459aeaee2b98ef651da78f8a03ce22c23ebbeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ThingEngineer/PHP-MySQLi-Database-Class/zipball/43459aeaee2b98ef651da78f8a03ce22c23ebbeb",
+                "reference": "43459aeaee2b98ef651da78f8a03ce22c23ebbeb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "MysqliDb.php",
+                    "dbObject.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander V. Butenko",
+                    "email": "a.butenka@gmail.com",
+                    "homepage": "http://smarttechdo.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Josh Campbell",
+                    "email": "josh.lee.campbell@gmail.com",
+                    "homepage": "https://github.com/thingengineer",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP MySQL Wrapper and object mapper which utilizes MySQLi and prepared statements",
+            "time": "2018-10-11 10:30:56"
+        },
+        {
             "name": "twbs/bootstrap",
             "version": "v4.2.1",
             "source": {
@@ -768,7 +813,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/006e9e0d9ba19d1ee14f05870c73300680b53daf",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/d441b3099ceb5ad2dc41a40d23fabca71647ab04",
                 "reference": "006e9e0d9ba19d1ee14f05870c73300680b53daf",
                 "shasum": ""
             },
@@ -812,7 +857,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/daff271f818873a5b4949045460e96f48e32b7ad",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/aba2104c00e13d69ca8f1f3d3f94e7f8d3c58038",
                 "reference": "daff271f818873a5b4949045460e96f48e32b7ad",
                 "shasum": ""
             },
@@ -1601,7 +1646,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1d56f4b867f139db0b01f481e89370630f30d050",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3db19712f90219b14f2503e050f50fee4a1ac82b",
                 "reference": "1d56f4b867f139db0b01f481e89370630f30d050",
                 "shasum": ""
             },
@@ -2629,7 +2674,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "thingengineer/mysqli-database-class": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

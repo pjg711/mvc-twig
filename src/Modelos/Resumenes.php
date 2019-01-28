@@ -2,6 +2,7 @@
 namespace MVCWeb\Modelos;
 
 use MVCWeb\Modelos\Resumen;
+//use MVCWeb\Modelos\BaseDeDatos;
 /**
  * [Resumenes description]
  */
@@ -118,6 +119,7 @@ class Resumenes
         {
             //echo "componente en __construct---->{$componente}<br>";
             //var_dump( $valor );
+            //$BD = new BaseDeDatos();
             $query = $this->genero_sql( $componente, $campo, $valor, $orden, $limite, $buscar_aproximado, $campos_aproximados, $solo_activos );
             $this->query_generada = $query;
             if( sql_select( $query, $consulta ) )
@@ -157,8 +159,10 @@ class Resumenes
         $cadena_select = [];
         $nueva_cadena_select = "";
         $cadena_select[] = "resumenes.`id_resumen` AS `id_resumen`";
-        $cadena_select[] = "resumenes.`id_persona` AS `id_persona`";
-        $cadena_select[] = "resumenes.`id_grupo` AS `id_grupo`, resumenes.`activo` AS `activo`";
+        //$cadena_select[] = "resumenes.`id_persona` AS `id_persona`";
+        //$cadena_select[] = "resumenes.`id_grupo` AS `id_grupo`";
+
+        $cadena_select[] = "resumenes.`activo` AS `activo`";
         $cadena_select[] = "resumenes.`area` AS `area`, resumenes.`componente` AS `componente`";
         $cadena_select[] = "`resumen_{$this->idioma}` AS `resumen`";
         $cadena_select[] = "personal.`nombre` AS `nombre`, personal.`apellido` AS `apellido`";
